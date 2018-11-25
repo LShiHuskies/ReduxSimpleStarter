@@ -11,8 +11,9 @@ class PostsIndex extends Component {
     this.props.fetchPosts();
   }
 
-  renderPosts() {
+  renderPosts = () => {
     return _.map(this.props.posts, post => {
+      console.log(post);
       return (
         <li className="list-group-item" key={post.id}>
           {post.title}
@@ -40,6 +41,7 @@ class PostsIndex extends Component {
 }
 
 const mapStateToProps = (state) => {
+  console.log(state)
   return {
     posts: state.posts
   };
